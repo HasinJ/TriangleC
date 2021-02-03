@@ -32,7 +32,11 @@ void h_triangle(unsigned width){
 }
 
 int main(int argc, char const *argv[argc+1]) {
-  triangle(atoi(argv[1]));
-  v_triangle(atoi(argv[1]));
-  h_triangle(atoi(argv[1]));
+  //printf("%d\n", argc);
+  if (argc!=2) return EXIT_FAILURE;
+  unsigned width = atoi(argv[1]);
+  triangle(width);
+  v_triangle(width);
+  h_triangle(width);
+  return EXIT_SUCCESS;
 }
