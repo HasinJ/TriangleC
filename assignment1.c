@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-void triangle(unsigned width)
+void triangle(signed width)
 {
   printf("\noriginal:");
 
@@ -12,7 +12,7 @@ void triangle(unsigned width)
     }
 }
 
-void v_triangle(unsigned width){
+void v_triangle(signed width){
   printf("\nupside down:\n");
 
   for (size_t i = width; i>0; i--) {
@@ -21,7 +21,7 @@ void v_triangle(unsigned width){
   }
 }
 
-void h_triangle(unsigned width){
+void h_triangle(signed width){
   printf("\nright side vertical:\n");
 
   for (size_t i = width; i>0; i--) {
@@ -34,7 +34,9 @@ void h_triangle(unsigned width){
 int main(int argc, char const *argv[argc+1]) {
   //printf("%d\n", argc);
   if (argc!=2) return EXIT_FAILURE;
-  unsigned width = atoi(argv[1]);
+  signed width = atoi(argv[1]);
+  if (width<1) return EXIT_FAILURE;
+
   triangle(width);
   v_triangle(width);
   h_triangle(width);
