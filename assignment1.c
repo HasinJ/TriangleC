@@ -38,9 +38,9 @@ int main(int argc, char const *argv[argc+1]) {
   if (width<1) return EXIT_FAILURE;
 
   if (argc==2) triangle(width);
-  else if (*argv[2]=='v') v_triangle(width);
-  else if (*argv[2]=='h') h_triangle(width);
+  else if (*argv[2]=='v' && strlen(argv[2])==1) v_triangle(width);
+  else if (*argv[2]=='h' && strlen(argv[2])==1) h_triangle(width);
   else return EXIT_FAILURE;
-  
+
   return EXIT_SUCCESS;
 }
